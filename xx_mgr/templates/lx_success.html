@@ -1,0 +1,54 @@
+﻿{% extends "lx_base.html" %}
+
+{%block main%}
+<style>
+    .xx_flex_left img{
+        width: 150px;
+         height: 150px;
+    }
+    .title{
+        font-size:15pt !important;
+        font-weight: bolder;
+    }
+    .summary{
+        font-size:12pt !important;
+
+    }
+    .summary{
+        overflow:hidden;
+        text-overflow:ellipsis;
+        display:-webkit-box;
+        -webkit-box-orient:vertical;
+        -webkit-line-clamp:4;
+    }
+    .xx_box{
+        min-height: 400px;
+    }
+</style>
+    <div style="height:20px;"></div>
+    <div class="xx_box">
+        <div style="height:15px;"></div>
+        <div class="xx_cover">
+            {% for article in article_list %}
+                <div class="xx_flex_left ">
+                    <div>
+                        <img src="{{ article.cover.url }}" alt=""/>
+                    </div>
+                    <div class="content">
+                        <div class="title">{{ article.title }}</div>
+                        <div style="height:10px;"></div>
+                        <div class="summary">
+                            {% autoescape off %}
+                                {{ article.content }}
+                            {% endautoescape %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div style="height:15px;"></div>
+
+    </div>
+
+
+{% endblock %}

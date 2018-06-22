@@ -1,0 +1,295 @@
+﻿{% extends "lx_base.html" %}
+
+{%block main%}
+{#21#}
+{#213#}
+<!--动态加载模块开始-->
+<div name="ymgj_banner" class="container container_24 tplArea ymgj_banner">
+    <div class=" banner_b">
+        <div class="widget widget_43_29" data-title="移民国家焦点图" href="/ymgj_jdt/">
+            <div class="ImageDisplayBoxWrap ImageDisplayBoxWrap_LinkModule">
+                <div class="ImageDisplayBox imageDisplay_43">
+                   {% for article in five_article_list %}
+                        <a href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank" title="1">
+                            <img src="{{ article.cover.url }}" style="width:1680px; height:380px; margin:0px 0px 0px 0px;" alt="1" />
+                        </a>
+                    {% endfor %}
+
+                </div>
+            </div>
+            <script type="text/javascript">
+            $(function() {
+                function init(){
+                    var box = $(".imageDisplay_43");
+                    box.each(function(){
+                        if(this.initCycle)
+                            return;
+                        this.initCycle = true;
+
+                        var box = $(this);
+                        var wrap = box.closest('.ImageDisplayBoxWrap');
+
+
+                        box.cycle({
+
+
+                            slides: "> a"
+                        });
+                    });
+                }
+                ensureMedia({"_css": {}, "_js": ["http://www.5migrate.com/static/admin/js/jquery.js", "http://www.5migrate.com/static/_Client/JQuery/cycle2/jquery.cycle2.min.js"]}, init);
+            });
+            </script>
+        </div>
+    </div>
+</div>
+
+
+<div name="ymgj_main" class="container container_24 tplArea ymgj_main">
+
+
+
+    <div class="grid grid_15">
+    <div style="height:25px"></div>
+        <div class="widgetSet gsgk ui-sortable-handle">
+            <ul class="setHeader">
+                {% for tag in one_tag_list %}
+                     {% if forloop.first %}
+                        <li class="firstTab current">
+                     {% elif  forloop.last %}
+                         <li class="lastTab">
+                     {% else %}
+                        <li>
+                     {% endif %}
+                        <a href="{{ cover_base_url }}/{{ nav_index }}/{{ tag.id }}/" >{{ tag.name }}</a>
+                     </li>
+                {% endfor %}
+            </ul>
+            <div class="setBody">
+
+                 {% for article in one_article_list %}
+                 <div class="widget widget_564_214 standardWidget ui-sortable-handle gsgn current">
+                    <div class="wHeader">
+{#                                            <h2 class="caption">焦点新闻</h2>#}
+                        <a class="more" href="菜单地址">更多...</a>
+                    </div>
+                    <div class="wBody">
+                        <ul class="summaryList summaryList_ArticleModule">
+                            <li>
+                                <div class="imgBox">
+                                    <a href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank">
+
+                                        <img src="{{ article.cover.url }}"  style="width: 250px; height: 250px; display: inline;">
+                                    </a>
+                                </div>
+                                <a class="title" href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank">{{ article.title }}</a>
+                                <div class="summary">
+                                   {{ article.subtitle }}
+                                    <span class="more">
+                                        <a href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank">[详细]</a></span> <span class="more">
+{#                                    <a href="" target="_blank">[更多]</a>#}
+                                </span>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+{#    移民资讯#}
+    <div class="grid grid_9">
+    <div style="height:25px"></div>
+        <div class="widget widget_47_30 standardWidget ui-sortable-handle lxzx">
+            <div class="wHeader">
+                <h2 class="caption">{{ two_tag.name }}</h2>
+
+                <a class="more" href="{{ cover_base_url }}/{{ nav_index }}/{{ two_tag.id }}/">更多...</a>
+            </div>
+            <div class="wBody">
+                      <ul class="dateList dateList_ArticleModule">
+                          {% for article in two_article_list %}
+                            <li>
+                                <a href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank" title="澳洲10年往返签正式实施啦！澳洲留学探亲好利器！">
+                                    {{ article.title|slice:"15" }}
+                                </a>
+                                <span>{{ article.issue_time|date:"Y/m/d" }}</span>
+                            </li>
+                          {% endfor %}
+                      </ul>
+            </div>
+        </div>
+    </div>
+
+<style>
+    .more_flex{
+        display: flex;
+        justify-content:flex-end;
+        align-items: center;
+{#        padding-right: 10px;#}
+    }
+    .more_flex a {
+        margin: 15px 15px 0 0;
+    }
+
+    .min {
+        height: 286px;
+        overflow: hidden;
+    }
+</style>
+{#移民攻略#}
+<div class="grid grid_15 lxgl_a">
+    <div class="grid grid_15 alpha omega lxgl_b more_flex">
+{#        <div class="grid grid_2 alpha ymgl_n">#}
+{#    <div class="customContent">#}
+            <a href="{{ cover_base_url }}/{{ nav_index }}/{{ three_tag.id }}/">更多...</a>
+
+{#</div>#}
+{#        </div>#}
+    </div>
+<div class="grid grid_15 alpha omega lxgl_c min"><div class="grid grid_7 alpha"><div class="widget widget_51_31 lxgl_zy ui-sortable-handle" data-title="移民攻略摘要" href="/ymgl_zy/">
+<ul class="summaryList summaryList_ArticleModule">
+	<li>
+		<div class="imgBox">
+			<a href="{{ article_base_url }}/{{ nav_index }}/{{ three_article_list.0.id }}/" target="_blank">
+			    <img src="{{ three_article_list.0.cover.url }}"  style="width: 240px; height: 144px; margin: 3px 0px; display: inline;">
+			</a>
+		</div>
+		<a class="title" href="{{ article_base_url }}/{{ nav_index }}/{{ three_article_list.0.id }}/" target="_blank" title="怎样安排留学期间打工时间更为合理？">{{ three_article_list.0.title }}</a>
+		<div class="summary">
+			   {{ three_article_list.0.subtitle|slice:"25" }}...
+			<span class="more"><a href="{{ article_base_url }}/{{ nav_index }}/{{ three_article_list.0.id }}/" target="_blank">[详细]</a></span>
+		</div>
+
+	</li>
+
+</ul></div></div><div class="grid grid_7 lxgl"><div class="widget widget_52_32 lxgl" data-title="移民攻略" href="/ymgl/">
+<ul class="list list_ArticleModule">
+    {% for article in three_article_list %}
+         {% if forloop.first %}
+         {% else %}
+            <li><a href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank" title="澳洲10年往返签正式实施啦！澳洲留学探亲好利器！">{{ article.title|slice:"15" }}</a></li>
+         {% endif %}
+    {% endfor %}
+
+</ul></div></div></div></div>
+
+
+
+
+
+
+    {#成功案例#}
+    <div class="grid grid_9 cgal_a">
+        <div class="widget widget_53_33 cgal standardWidget">
+            <div class="wHeader">
+                <a href="{{ cover_base_url }}/{{ nav_index }}/{{ four_tag.id }}/" class="more">更多...</a>
+            </div>
+            <div class="wBody min">
+
+                <ul class="list list_ArticleModule">
+                        {% for article in four_article_list %}
+                            <li>
+                                <a href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank" title="日本研究生留学需要满足的一些硬性条件">
+                                    {{ article.title|slice:"10" }}
+                                </a>
+                                <span>{{ article.issue_time|date:"Y/m/d" }}</span>
+                            </li>
+                        {% endfor %}
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+{#  <style>#}
+{#        .grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12, .grid_13, .grid_14, .grid_15, .grid_16, .grid_17, .grid_18, .grid_19, .grid_20, .grid_21, .grid_22, .grid_23, .grid_24 {#}
+{#            display: inline;#}
+{#            float: left;#}
+{#            margin-left: 0px !important;#}
+{#            margin-right: 5px;#}
+{#        }#}
+{#    </style>#}
+{#    小轮播图#}
+   <div class="grid  alpha">
+        <div class="grid_15 widget widget_43_29" data-title="移民国家焦点图" href="/ymgj_jdt/">
+            <div class="ImageDisplayBoxWrap ImageDisplayBoxWrap_LinkModule">
+                <div class="ImageDisplayBox imageDisplay_43">
+                   {% for article in six_article_list %}
+                        <a href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank" title="1">
+                            <img src="{{ article.cover.url }}" style="width:580px; height:300px; margin:0px 0px 0px 0px;" alt="1" />
+                        </a>
+                    {% endfor %}
+
+                </div>
+            </div>
+{#            <script type="text/javascript">#}
+{#            $(function() {#}
+{#                function init(){#}
+{#                    var box = $(".imageDisplay_43");#}
+{#                    box.each(function(){#}
+{#                        if(this.initCycle)#}
+{#                            return;#}
+{#                        this.initCycle = true;#}
+{##}
+{#                        var box = $(this);#}
+{#                        var wrap = box.closest('.ImageDisplayBoxWrap');#}
+{##}
+{##}
+{#                        box.cycle({#}
+{##}
+{##}
+{#                            slides: "> a"#}
+{#                        });#}
+{#                    });#}
+{#                }#}
+{#                ensureMedia({"_css": {}, "_js": ["http://www.5migrate.com/static/admin/js/jquery.js", "http://www.5migrate.com/static/_Client/JQuery/cycle2/jquery.cycle2.min.js"]}, init);#}
+{#            });#}
+{#            </script>#}
+        </div>
+    </div>
+
+        <div class="grid grid_9 omega"><div class="widget widget_34_14 ui-sortable-handle tpzs_bb" data-title="图片展示" href="/tpzs/">
+
+
+
+
+    <ul id="slideList" class="summaryList summaryList_ArticleModule">
+        {% for article in six_article_list %}
+        <li>
+            <div class="imgBox">
+                <a href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank">
+                    <img src="{{ article.cover.url }}" data-original="/_m/cache/c7/25/c725cf29fa988a6708b0cf0d1d12c54f.jpg" style="width: 97px; height: 50px; margin: 0px; display: inline;">
+                </a>
+            </div>
+            <a class="title" href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank" >{{ article.title|slice:"15" }}</a>
+            <div class="summary">
+                {{ article.subtitle |slice:"14"}}...
+            </div>
+
+        </li>
+        {% endfor %}
+    </ul>
+
+    <script type="text/javascript">
+    $(function(){
+        var listDisplayer = $(".tpzs_a .ImageDisplayBox");
+        var listItems = $("#slideList li");
+        listItems.mouseover(function(){
+            var index = listItems.index(this);
+            listDisplayer.cycle('goto', index);
+        });
+    });
+    </script></div></div>
+    </div>
+
+</div>
+<!--动态加载模块结束-->
+
+{% endblock %}
