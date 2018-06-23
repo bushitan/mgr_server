@@ -1,0 +1,537 @@
+
+
+
+a{text-decoration: none;}
+a:hover{ text-decoration: none;   }
+.more a { text-align: right;}
+ul li{list-style:none;}
+
+
+
+/* CSS 头部 */
+
+
+
+.container_24 .top_1{width:960px;height:30px;margin:0 auto;float: none;display: block;line-height:30px;color:#808080;}
+
+
+
+/* CSS 导航 */
+.nav_bg{width:100%;background-color:#F8F8F8;}
+
+.container_24 .nav{width:960px;margin:0 auto;float: none;display: block;height:110px;}
+
+.logo{height:75px;margin-top:20px;width:160px;}
+
+
+/* CSS 菜单 */
+
+.mainbav{width:100%;background-color:#00134D;}
+
+/* CSS 菜单导航  */
+
+/* start 国家选择菜单 */
+
+.countries .sf-menu ul {
+	top:4.5em!important;
+	z-index: 1000!important;
+	display: none;
+}
+/* CSS 留学国家 */
+.countries .sf-menu li {
+    background: none;
+    color: #FFF;
+    font-size: 16px;
+    width: 120px;
+    font-family: "微软雅黑";
+    line-height: 35px;
+}
+
+.countries .sf-menu a {
+    border-left: none;
+    color: #FFF;
+    background: #CB2546;
+    border-top: none;
+    height:45px;
+    text-align:center;
+    padding: .75em 1em;
+    text-decoration: none;
+}
+
+.countries .sf-menu a:visited {
+    color: #fff; }
+
+.countries .sf-menu li:hover{
+    background:none;
+    outline: 0;}
+
+.countries .sf-menu a:focus {
+    background: #CFDEFF;
+    outline: 0;
+}
+.countries .sf-menu a:hover{
+    background: #CB2546;
+   height:45px;
+    outline: 0;}
+
+.countries .sf-menu a:active {
+    background: #CFDEFF;
+    outline: 0;}
+
+
+#mainMenu .coun:hover{background-color: #d4a5af!important;}
+
+
+#mainMenu .itemBox {
+    padding: 10px;
+    min-width: 300px;
+    background-color:#DD4664;
+}
+
+#mainMenu .itemBox h3 {
+    font-size: 20px;
+}
+
+#mainMenu .itemBox a {
+    display:inline;
+    background: #fff;
+    height:auto;
+    color:#CB2546!important;
+    margin: 0;
+    border: 0;
+    padding: 2px;
+}
+
+
+
+
+
+/*#mainMenu .itemBox .group label, #mainMenu .itemBox .group .groupItems, #mainMenu .itemBox .group .item {
+    display:inline-block;
+}
+#mainMenu .itemBox .group label, #mainMenu .itemBox .group .groupItems, #mainMenu .itemBox .group .item {
+    *display:inline;
+}*/
+/* end 国家选择菜单 */
+
+.container_24 .menu{width:960px;margin:0 auto;float: none;display: block;}
+
+
+.submenu .sf-menu .current{
+    background:#C6995F;
+}
+
+.submenu .sf-menu li {
+    background: none;
+    color: #FFF;
+    font-size: 16px;
+    width: 115px;
+    font-family: "微软雅黑";
+  line-height: 35px;
+}
+.submenu .sf-menu a {
+    border-left: none;
+      color: #FFF;
+    border-top: none;
+    height:45px;text-align:center;
+    padding: .75em 1em;
+    text-decoration: none;
+}
+.submenu .sf-menu a:visited {
+    color: #fff; }
+
+.submenu .sf-menu li:hover{
+    background:#C6995F;
+    outline: 0;}
+
+.submenu .sf-menu a:focus {
+    background: #CFDEFF;
+    outline: 0;
+}
+
+/* CSS 是这个影响的  */
+.submenu .sf-menu a:hover{
+    background: #C6995F;;
+    height:45px;
+    outline: 0;
+
+}
+
+.submenu .sf-menu a:active {
+    background: #CB2546;
+    outline: 0;
+}
+
+
+ /* 焦点图*/
+.ymgj_banner{width:100%;}
+ 
+.container_24 .banner_a{width:100%;margin:0 auto;float: none;display: block;}
+
+.container_24 .banner_b {
+    width: 100%;
+}
+
+
+.banner_b .ImageDisplayBox a{ right:0; }
+.banner_b .ImageDisplayBox img { width:100%!important; height:auto!important; 
+
+margin:0!important; }
+
+.banner_b .ImageDisplayBoxWrap {
+    background-color:none;
+    border: none;width:100%; margin:0 auto;
+    padding: 0px;
+}
+
+
+/* CSS   正文 */
+
+.ymgj_main{margin-top:20px;}
+
+.container_24 .main_home{width:960px;height:500px;margin:0 auto;}
+
+
+
+
+/************** 公司概况的内容 ************************************/
+
+
+.gsgn .wBody {
+  background-color: #FFFFFF;
+  border: 3px solid #d91743;height: 300px;
+}
+
+.gsgn .summary{  font-size: 15px;font-family:"微软雅黑"; line-height:25px;text-indent:2em;}
+.gsln .summary{  font-size: 15px;font-family:"微软雅黑"; line-height:25px;text-indent:2em;}
+.fuwu .summary{  font-size: 15px;font-family:"微软雅黑"; line-height:25px;text-indent:2em;}
+
+
+.gsln .wBody {
+    background-color: #ffffff;
+    border: 3px solid #eb600c;
+    height: 300px;
+}
+
+.fuwu .wBody {
+    background-color: #ffffff;
+    border: 3px solid #d91743;
+    height: 300px;
+}
+
+.standardWidget {
+  background: #ffffff;
+  border: none;
+  margin-bottom: 8px;
+}
+.gsgk ul.summaryList li {
+  overflow: auto;
+  background-color: #ffffff;
+  zoom: 1;}
+ul.summaryList .imgBox {
+  float: left;
+  border: none;
+  padding: 3px;
+  background-color: #fff;
+  margin: 10px;
+}
+.gsgk ul.setHeader {
+  margin: 0;
+  padding: 0;
+  line-height: 22px;
+  border-bottom: none;
+}
+.gsgk.widgetSet {
+  margin: 0;
+  padding: 2px;
+  border: none;
+  background: none;
+  margin-bottom: 8px;
+}
+
+.gsgk.widgetSet .setBody {
+  background: #FFF;
+  border: none;
+  border-width: 0 1px 1px;
+  margin: 0;
+}
+.gsgk ul.setHeader li {
+  margin: 14px 0px 0px 10px;
+  line-height: 23px;
+  background: none;
+  border: none;
+  font-weight: bold;
+  color: #FFF;
+  text-align: center;
+  margin-bottom: -2px;
+  margin-left: 20px;
+  width: 160px;
+}
+
+.gsgk ul.setHeader li.current a {
+  color: #FFF;
+}
+.gsgk ul.setHeader li a {
+  color: #FFF;
+}
+.gsgk ul.summaryList .title {
+  font-family: 微软雅黑;
+  color: #f83797;
+  line-height: 40px;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.gsgk .firstTab, .gsgk .lastTab{
+    background:#C6995F;
+}
+
+
+ul.dateList li span {
+   float: right;
+  font-size: 13px;
+ 
+  color:#3D3D3D;
+}
+
+
+/************** 公司文化的内容 ************************************/
+
+
+
+
+/************** css 留学资讯 ************************************/
+
+
+
+.lxzx.standardWidget {
+    background: none;
+    border: none;
+    margin-bottom: 8px;
+}
+.lxzx .wHeader .caption {
+    display: block;
+    float: left;
+    font-family:"微软雅黑"; font-size:18px; color:#FFF; font-weight:bold;
+  padding: 19px 8px 0px 50px;
+    margin: 0;
+}
+
+.lxzx .wHeader .more {
+    display: block;
+    float: right;
+    padding: 20px 15px 0px 0px;}
+
+.lxzx a.more{
+   color:#FFF;}
+.lxzx .more:hover{
+   color:#FFF;}
+   
+   
+.lxzx .wBody {border: 3px solid #d9580b; background-color:#FFF; }
+   
+.lxzx ul.dateList li, .lxzx ul.bothSideList li {
+    line-height: 35px; _line-height: 30px;
+     font-size: 16px;font-family:"微软雅黑";color:#333333;
+}
+.lxzx ul li a{color:#333333;}
+.lxzx ul li a:hover{color:#003AE8;}
+
+
+
+
+/* CSS  留学攻略 */
+
+.lxgl_a{margin-top:20px;}
+
+.container_24 .lxgl_c{ border:3px solid #eb600c; width: 584px;background-color:#FFF;}
+
+.lxgl_zy{ margin-left:8px;} 
+
+.lxgl_zy ul.summaryList .imgBox {
+    float: left;
+    border: none;
+    padding: 0px;
+    background-color: #fff;
+    margin: 0px;
+}
+
+.lxgl_zy ul.summaryList .title {
+   font-weight: bold;color:#CB2546;
+       font-size: 15px;font-family:"微软雅黑"; line-height:30px;
+}
+
+.lxgl_zy .summary{     font-size: 15px;font-family:"微软雅黑"; line-height:25px;text-indent:2em;}
+
+.container_24 .lxgl{ width:290px;}
+
+.lxgl ul.list li a{font-family:"微软雅黑"; line-height:35px;font-size: 16px;color:#333333;}
+
+.lxgl ul.list li a:hover{color:#003AE8;}
+
+
+.ymgl_m{width:470px;}
+
+.ymgl_n{
+    display: block;
+    float: right;
+    color:#fff;
+    padding: 20px 0px 0px 0px;
+}
+.ymgl_n a {
+      color:#fff;
+   
+}
+
+/* CSS  成功案例 */
+
+.cgal_a{margin-top:20px;}
+
+.cgal.standardWidget {
+    background: none;
+    border: none;
+    margin-bottom: 8px;
+}
+
+.cgal .wBody {
+   border: 3px solid #eb600c;
+    background-color: #FFF;
+}
+.cgal ul.list, .cgal ul.dateList, .cgal ul.bothSideList, .cgal ul.imageList, ul.summaryList {
+    line-height: 35px; _line-height: 30px;
+     font-size: 16px;font-family:"微软雅黑";color:#333333;
+}
+.cgal ul li a{color:#333333;}
+.cgal ul li a:hover{color:#003AE8;}
+
+.cgal .wHeader .more {
+    display: block;
+    float: right;
+    padding: 20px 15px 0px 0px;
+}
+
+.cgal a.more{
+   color:#FFF;}
+.cgal .more:hover{
+   color:#FFF;}
+
+
+
+/* CSS  图标 */
+.tubiao{margin-top:40px; margin-bottom:30px;}
+
+
+
+
+/* CSS  搜索框  */
+.searchForm ul.fieldlist, .searchForm ul.fieldlist li {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    float: left;
+    list-style: none;
+    text-align: left;
+}
+.searchForm .toolbar {
+    text-align: left;
+    margin-left: 10px;
+}
+
+.toolbar .submit {
+      color: #fff;
+    background-color: #EB6109;
+    border-color: #fff;
+}
+
+.searchForm {
+    padding: 8px;
+    margin-top: 30px;
+}
+
+
+
+
+/* CSS  底部 */
+.footer{width:100%;background-color:#00134D; margin-top:20px; height:135px;  border-top:#C8A062 solid 5px; }
+
+.container_24 .foot{width:960px;margin:0 auto;float: none;display: block;font-size:14px; font-family:"微软雅黑";color:#FFF;margin-top:15px;line-height:25px;}
+
+
+/******显示搜索*******/
+.neiye .content_searchBar .searchFormBox{
+    display: block;
+}
+
+
+
+
+/***内容页*****/
+
+
+.tplArea .neiye {
+    margin-top:30px;
+}
+
+.tplArea .gsgk ul.setHeader{
+    background:none;
+    height:42px;
+}
+
+.tplArea .gsgk.widgetSet ul.setHeader {
+    font-family: 微软雅黑;
+    line-height: 40px;
+    font-weight: normal;
+    font-size: 17px;
+    background-color:#d91743;    
+
+}
+.tplArea .gsgk ul.setHeader li a:hover{
+
+}
+.tplArea .gsgk ul.setHeader li.current a{
+
+    font-weight: bold;
+}
+
+.tplArea .neiye .standardWidget .wHeader{
+    width:100%;
+    border-bottom-width: 0;    
+}
+.tplArea .gsgk ul.setHeader li{
+    width:auto;
+    margin: 0 10px 0 0;
+    line-height:43px;
+
+    padding: 0 10px;
+}
+
+.tplArea .gsgk ul.setHeader li.current{
+    background-color:#eb600c;
+}
+
+.tplArea .gsgk.widgetSet .setBody {
+
+}
+.tplArea .gsgk .summary{
+    font-size:15px;
+    line-height: 25px;    
+}
+
+.tplArea .gsgk ul.summaryList .title{
+    font-size:17px;
+    font-weight: bold;
+    color:#666;
+}
+.tplArea .gsgk ul.summaryList .title:hover{
+    color:red;
+}
+
+.tplArea .neiye .standardWidget .wBody{
+    border: 3px solid #eb600c;
+}
+
+.tplArea ul.dateList li a{
+    font-size:14px;
+    line-height: 190%;    
+}
+

@@ -1,0 +1,118 @@
+ul.articleCategoryList, ul.articleCategoryList li.listItem {
+	margin:0;
+	border:0;
+	padding:0;
+	list-style:none;
+}
+
+ul.articleCategoryList {
+	overflow: hidden;
+}
+
+ul.articleCategoryList li.listItem {
+	width:50%;
+	float:left;
+}
+
+li.listItem .widget {
+	margin:5px;
+}
+
+.article{
+	padding:5px;
+	line-height:180%;
+}
+
+.article h1.title, .article h2.subtitle{
+	font-size:18px;
+	text-align:center;
+	margin:0;
+	padding:0;
+	line-height:180%;
+}
+
+.article h2.subtitle{
+	font-size:14px;
+	font-weight:normal;
+}
+
+.article div.info{
+	text-align:center;
+	font-size:12px;
+	padding-bottom:10px;
+	border-bottom:1px dotted #ccc;
+	margin-bottom:5px;
+}
+
+.article div.info div.infoItem, .article div.info .tools{
+	display:inline-block;
+	margin:auto 5px;
+}
+
+.article div.info div.infoItem, .article div.info .tools{
+	*display:inline;
+}
+
+.article .content{
+	font-size:14px;
+	line-height:180%;
+}
+
+.article .content p {
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+.article .content table p {
+	margin: 0;
+}
+
+.article .content .prompt{
+	font-size:12px;
+	text-align:center;
+	color:#D45417;
+	margin:20px 0;
+}
+
+.article .expandRead{
+	margin-top:30px;
+	overflow:hidden;
+	*zoom:1;
+}
+
+.article .expandRead .prev{
+	float:left;
+}
+
+.article .expandRead .next{
+	float:right;
+}
+
+.article ul.toolbar{
+	margin:5px 0 0 0;
+	border:0;
+	padding:0;
+	text-align:right;
+	border-top:1px dotted #ccc;
+}
+
+.article ul.toolbar li{
+	margin:0;
+	border:0;
+	padding:0;
+	display:inline-block;
+}
+
+.article ul.toolbar li{
+	*display:inline;
+}
+
+.article ul.toolbar li a{
+	display:block;
+	padding:3px 8px;
+	border:1px solid #ccc;
+}
+
+.article ul.toolbar li a:hover{
+	background-color:#ccc;
+}

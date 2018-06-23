@@ -1,6 +1,6 @@
 # Python:
 *.pyc
-*.json
+#*.json
 /static/*
 !/static/readme.txt
 /media/*

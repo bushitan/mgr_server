@@ -1,0 +1,779 @@
+﻿/* 全局定义 */
+body {
+	font-size:12px;
+	line-height:170%;
+}
+
+.none { display:none; }
+.clear { clear:both; }
+
+.wrapped {
+	overflow:auto;
+	zoom:1;
+}
+
+
+/* 部件集基本定义 */
+.widgetSet {
+	margin:0;
+	padding:2px;
+	border:1px solid #DDD;
+	background:#f5f5f5;
+	margin-bottom:8px;
+}
+
+.widgetSet ul.setHeader{
+	margin:0;
+	padding:0;
+	line-height:22px;
+	border-bottom:1px solid #DDD;
+}
+
+ul.setHeader li {
+	margin:0 4px 0 0;
+	padding:0 5px;
+	display:inline-block;
+	background:#e5e5e5;
+	border:1px solid #DDD;
+	border-width:1px 1px 0;
+	vertical-align:middle; /* 当tabs上同时有中英文的选项卡时，导致选项卡定位偏差，仅中文时出现当前选项卡与内容区不相连，仅英文时正常，此问题仅存在于IE浏览器（字体inline-block对齐问题） */
+}
+
+ul.setHeader li{
+	*display:inline;
+}
+
+ul.setHeader li.current {
+	line-height:23px;
+	background:#FFF;
+	border-bottom:1px solid #FFF;
+	font-weight:bold;
+	color:#F00;
+	margin-bottom:-2px;
+}
+
+.widgetSet .setBody{
+	background:#FFF;
+	border:1px solid #DDD;
+	border-width:0 1px 1px;
+	margin:0;
+}
+
+.widgetSet .setBody .widget{
+	display:none;
+}
+
+.widgetSet .setBody .current, .widgetSet .setBody .widget .widget {
+	display:block;
+}
+
+.widgetSet .setBody .standardWidget { background-color:#fff; margin-bottom:auto; }
+.widgetSet .standardWidget .wHeader { display:none; }
+.widgetSet .widget .standardWidget .wHeader { display:block; }
+
+/* widgetSet_tagsAfter */
+.widgetSet_tagsAfter ul.setHeader{
+	border-bottom:0px;
+	border-top:1px solid #DDD;
+}
+
+.widgetSet_tagsAfter ul.setHeader li {
+	border:1px solid #DDD;
+	border-width:0 1px 1px;
+}
+
+.widgetSet_tagsAfter ul.setHeader li.current {
+	border-top:1px solid #FFF;
+	margin-bottom:0;
+	margin-top:-2px;
+}
+
+.widgetSet_tagsAfter .setBody{
+	border-width:1px 1px 0;
+}
+
+/* 部件基本定义 */
+.standardWidget {
+	background:#F6F6F6;
+	border:1px solid #ccc;
+	margin-bottom:8px;
+}
+
+.standardWidget .wHeader {
+	overflow:auto;
+	zoom:1;
+	background:#E5E5E5;
+	border-bottom:1px solid #ccc;
+}
+
+.standardWidget .wHeader .caption{
+	display:block;
+	float:left;
+	font-size:12px;
+	font-weight:bold;
+	padding:3px 8px;
+	margin:0;
+}
+
+.standardWidget .wHeader .more{
+	display:block;
+	float:right;
+	padding:3px;
+}
+
+.widget, .standardWidget .wBody {
+}
+
+.contentWidget .wBody {
+	padding:8px;
+}
+
+/* 列表 */
+.singleLine{
+	display:block;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	-o-text-overflow: ellipsis;
+}
+
+ul.list, ul.dateList, ul.bothSideList, ul.imageList, ul.summaryList {
+	padding:8px;
+	margin:0;
+	border:0;
+	list-style:none;
+	line-height:190%;
+}
+
+ul.list li, ul.dateList li, ul.bothSideList li, ul.imageList li, ul.summaryList li {
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+ul.col2, ul.col3, ul.col4 {
+	overflow:auto;
+	zoom:1;
+}
+
+ul.col2 li, ul.col3 li, ul.col4 li{
+	/* 多列的实现，要正确的显示多列，必须确保列表ul的子项li的padding、border、margin均为0，因为根据w3c标准元素width值为实际内容区的宽度，
+	不包括padding、border、margin的宽度。 */
+	width:50%;
+	float:left;
+}
+
+ul.col2 li li, ul.col3 li li, ul.col4 li li {
+	width:auto;
+	float:none;
+}
+
+ul.col3 li{
+	width:33%;
+}
+
+ul.col4 li{
+	width:25%;
+}
+
+/* 基本列表 */
+ul.list li a {
+	/* 实现 list-style-type : square 的风格，原本应设置 li 背景实现，但由于多列情况下计算%列宽时不计算padding的宽度，
+	会造成不能正常显示多列。如：col2的列宽50%仅为实际内容区的宽度，再加上padding值li的实际宽度会大于父容器ul宽度的50%，造成仅显示一列 */
+	padding-left: 12px;
+	background:transparent url(../images/dot.png) no-repeat scroll 4px center;	/* 相当于 list-style-position : inside 的实现 */
+	*background:transparent url(../images/dot.png) no-repeat scroll 4px 0.5em;	/* 修复 ie6/7 Bug */
+}
+
+/* 带日期的列表 & 两侧对齐列表 */
+ul.dateList, ul.bothSideList{
+	
+}
+ul.dateList li, ul.bothSideList li{
+	overflow:auto;
+	zoom:1;
+	background:transparent url(../images/dot.png) no-repeat scroll 4px center;	/* 相当于 list-style-position : outside 的实现 */
+}
+ul.dateList li a, ul.bothSideList li .leftSide{
+	padding-left: 12px;
+	float:left;
+}
+ul.dateList li span, ul.bothSideList li .rightSide{
+	float:right;
+}
+
+/* 图片列表 */
+ul.imageList li {
+	border:1px solid #ccc;
+	display:inline-block;
+	padding:5px;
+	margin:5px;
+	background-color:#fff;
+	text-align:center;
+	vertical-align:bottom;
+	overflow:hidden;
+}
+
+ul.imageList li {
+	*display:inline;
+}
+
+ul.imageList li .imgBox{
+	text-align:center;
+}
+
+/* 图片摘要列表 */
+ul.summaryList li {
+	overflow:auto;
+	zoom:1;
+}
+
+ul.summaryList .imgBox{
+	float:left;
+	border:1px solid #ccc;
+	padding:3px;
+	background-color:#fff;
+	margin:5px 5px 5px 0;
+}
+
+ul.summaryList .title{
+	font-weight:bold;
+	font-size:13px;
+}
+
+ul.summaryList .more{
+	text-align:right;
+}
+
+/* 图片展示 */
+.ImageDisplayBoxWrap{
+	background-color:#EEEEEE;
+	border:1px solid #CCCCCC;
+	padding:5px;
+}
+
+.ImageDisplayBox, .ImageDisplayPager, .ImageDisplayText {
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+.ImageDisplayBox
+{
+	text-align:center;
+	overflow:hidden;
+}
+
+.ImageDisplayPager { text-align:right; font-size:12px; }
+.ImageDisplayPager a { display:inline-block; margin: 0; padding: 0 6px; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; background: #fff; text-decoration: none }
+.ImageDisplayPager a.activeSlide { background: #E7E7E7; }
+.ImageDisplayPager a:focus { outline: none; }
+
+.ImageDisplayText { text-align:center; }
+
+/* 表格列表 */
+.tableListWrap {
+	margin:3px;
+}
+
+.tableList {
+	width:100%;
+	margin:0;
+}
+
+.tableList th, .tableList td {
+	padding:1px 3px;
+	text-align:center;
+}
+
+.tableList .unstableCol {
+	text-align:left;
+}
+
+.tableList th{
+	font-weight:bold;
+}
+
+/* 分页 */
+.pagination{ text-align:center; padding:5px; }
+.pagination a, .pagination span{
+	display:inline-block;
+	background-color:#fff;
+	color:#3682E4;
+	vertical-align:bottom;
+	text-decoration:none;
+	margin:0;
+	border:1px solid #3682E4;
+	padding:1px 7px;
+}
+
+.pagination span.info{ color:#000; cursor:default; }
+
+.pagination span.current, .pagination a:hover{
+	background-color:#2B6AAE;
+	color:#fff;
+}
+
+.pagination span.current{ font-weight:bold; cursor:default; }
+
+/* breadcrumbs */
+.breadcrumbsBox{
+	background:#F0F0F0;
+	padding:0 8px;
+	margin:3px 0;
+	border:1px solid #ccc;
+}
+
+ul.breadcrumbs, ul.breadcrumbs li {
+	margin:0;
+	border:0;
+	padding:0;
+	list-style:none;
+	display:inline-block;
+}
+ul.breadcrumbs, ul.breadcrumbs li{
+	*display:inline;
+}
+
+ul.breadcrumbs li{
+	background:url(../images/breadcrumbs-separator.gif) no-repeat right center;
+	padding:2px 10px 2px 5px;
+}
+
+ul.breadcrumbs li.rootNode a{
+	background:url(../images/breadcrumbs-home.gif) no-repeat left center;
+	padding-left:20px;
+}
+
+ul.breadcrumbs li.leafNode{
+	background:none;
+}
+
+/* 简单 tab 面板插件 */
+.thinTab { padding:5px; }
+.thinTab ul.tabHeader, .thinTab .tabBody {
+	margin:0;
+	border:0;
+	padding:3px;
+}
+
+.thinTab ul.tabHeader li {
+	margin:0;
+	border:0;
+	padding:0;
+	list-style:none;
+	background:transparent url(../images/dot.png) no-repeat scroll 4px center;
+	display:inline-block;
+}
+.thinTab ul.tabHeader li {
+	*display:inline;
+}
+
+.thinTab ul.tabHeader li.current {
+	font-weight:bold;
+	display:inline-block;
+}
+.thinTab ul.tabHeader li.current {
+	*display:inline;
+}
+
+.thinTab ul.tabHeader li a {
+	padding-left:12px;
+}
+
+.thinTab .tabBody {
+	border-top:1px dotted #ccc;
+}
+.thinTab .tabBody ul.list, .thinTab .tabBody ul.dateList, .thinTab .tabBody ul.imageList, .thinTab .tabBody ul.summaryList {
+	padding:0;
+}
+
+/* 前台编辑工具栏 */
+.editToolbar {
+	position:fixed;
+	left:0;
+	top:0;
+	padding:3px;
+	z-index:10000;
+	/* 解决ie6不支持position:fixed */
+	_position:absolute;
+	_bottom:auto;
+	_top:expression(eval(document.documentElement.scrollTop));
+}
+
+.editToolbar .editButton{
+	width:24px;
+	height:24px;
+	background:transparent url(../images/edit.png) no-repeat scroll center center;
+}
+
+.editToolbar .button {
+	border:1px solid #ccc;
+	background-color:#fff;
+}
+
+.editToolbar .button:hover{
+	background-color:#eee;
+}
+.editToolbar .button:active{
+	background-color:#ccc;
+}
+
+.editToolbar .checked {
+	background-color:#eee;
+}
+
+/* confirmationBox */
+.confirmationBox {
+	border:1px solid #ccc;
+	padding:20px;
+}
+
+.confirmationBox .confirmationTitle{
+	font-size:20px;
+	margin:0 0 20px 0;
+	border:0;
+	padding:0;
+}
+
+.confirmationBox .operationTitle{
+	font-weight:bold;
+	margin:5px;
+	border:0;
+	padding:0;
+}
+
+.confirmationBox ul.operationList, .confirmationBox ul.operationList li{
+	margin:0;
+	border:0;
+	padding:0;
+	list-style:none;
+}
+.confirmationBox ul.operationList li{
+	background:transparent url(../../epage/images/dot.png) no-repeat scroll 4px center;
+	padding-left:12px;
+}
+
+/* 搜索部件 */
+.searchForm {
+	padding:8px;
+}
+
+.searchForm ul.fieldlist, .searchForm ul.fieldlist li{
+	margin:0;
+	border:0;
+	padding:0;
+	list-style:none;
+	text-align:left;
+}
+
+.searchForm ul.fieldlist li label{
+	width:65px;
+	padding:0 5px 0 0;
+	display:inline-block;
+	text-align:right;
+}
+.searchForm ul.fieldlist li label{
+	*display:inline;
+}
+
+.searchForm ul.errorlist li {
+	padding: 4px 5px 4px 25px;
+	margin: 0 0 3px 0;
+	border: 1px solid red;
+	text-align:left;
+}
+
+.searchForm .toolbar{
+	text-align:center;
+}
+
+.searchForm-line ul.fieldlist, .searchForm-line ul.fieldlist li, .searchForm-line .toolbar {
+	display:inline;
+}
+
+.searchForm-line ul.errorlist li {
+	display:block;
+}
+
+.searchForm-line ul.fieldlist li label{
+	display:inline;
+	width:auto;
+	padding:0 5px;
+}
+
+/* 内容页搜索工具栏 */
+.content_searchBar {
+	margin:0 0 5px 0;
+}
+
+.content_searchBar .searchParams {
+	border:1px solid #ccc;
+	border-bottom:0;
+	padding:3px 8px;
+	background:#F6F9FA;
+}
+.searchParams .searchTitle{
+	font-weight:bold;
+}
+.searchParams ul.searchParamList, ul.searchParamList li{
+	display:inline-block;
+}
+.searchParams ul.searchParamList, ul.searchParamList li{
+	*display:inline;
+}
+.searchParams ul.searchParamList{
+	list-style:none;
+	margin:0 0 0 10px;
+}
+ul.searchParamList li{
+	margin:0;
+	border:1px solid #A6C9E2;
+	padding:1px 6px;
+	background:#fff;
+	cursor:pointer;
+}
+ul.searchParamList li:hover {
+	border-color:#85B5D9;
+	background:#DFEFFC;
+}
+ul.searchParamList li a{
+	display:inline-block;
+}
+ul.searchParamList li a{
+	*display:inline;
+}
+ul.searchParamList .paramDelete{
+	width:12px;
+	height:12px;
+	vertical-align:middle;
+	background:transparent url(../../admin/img/icon_deletelink.gif) no-repeat scroll center center;
+}
+
+.content_searchBar .searchFormBox{
+	border:1px solid #ccc;
+	border-bottom:0;
+	display:none;
+}
+
+.content_searchBar .searchHandleBox{
+	background:transparent url(../images/dot.png) repeat-x center top;
+	text-align:center;
+}
+.content_searchBar .handle{
+	display:inline-block;
+	border:1px solid #ccc;
+	border-top:0;
+	padding:2px 5px;
+	background:#fff;
+	cursor:pointer;
+	font-weight:bold;
+}
+.content_searchBar .handle:hover{
+	color:#BA2636;
+	background:#fafafa;
+}
+.content_searchBar .handle{
+	*display:inline;
+}
+.content_searchBar .expanded{
+	color:#BA2636;
+}
+
+/* related_widgets */
+.related_widgets {
+	margin-top:5px;
+	*zoom:1;
+}
+
+
+
+
+/* tab list */
+ul.tab_list {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+ul.tab_list li {
+    line-height: inherit;
+	list-style: none;
+	margin: 0;
+	padding: 5px 10px;
+
+    float: left;
+}
+
+ul.tab_list li.current, ul.tab_list li.current:hover {
+	background: #e5e5e5;
+}
+
+ul.tab_list li:hover {
+    background: #ebebeb;
+}
+
+/* 链接类型的 tab_list */
+ul.tab_list_for_link li {
+	padding: 0;
+}
+
+ul.tab_list_for_link li a {
+	display: block;
+	padding: 5px 10px;
+	text-decoration: none;
+}
+
+/* 重置 tab_list 的当前项和 hover 项 */
+ul.tab_list_for_link li.current, ul.tab_list_for_link li.current:hover {
+	background: none;
+}
+
+ul.tab_list_for_link li:hover {
+    background: none;
+}
+
+/* 链接类型的 tab_list 使用列表项内的 a 标签 覆盖 li 的样式 */
+ul.tab_list_for_link li.current a, ul.tab_list_for_link li.current a:hover {
+	background: #e5e5e5;
+}
+
+ul.tab_list_for_link li a:hover {
+    background: #ebebeb;
+}
+
+
+
+/* field list */
+ul.field_list {
+	margin: 10px 0;
+	padding: 0;
+}
+
+ul.field_list li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.field_list .field_name, ul.field_list .field_value {
+	display: inline;
+}
+
+ul.field_list .field_name {
+	color:#818181;
+}
+
+ul.field_list .field_value {
+	color:#222;
+}
+
+ul.field_list_line li {
+	display: inline-block;
+	margin-right: 55px;
+}
+ul.field_list_line li {
+	*display: inline;
+}
+
+
+
+
+/* stack info group */
+.stack_box {
+	margin: 0;
+	border: 0;
+	padding: 10px;
+	overflow: hidden;
+}
+
+.stack_group {
+	float: left;
+	margin: 0;
+	margin-right: 10px;
+	border: 0;
+	padding: 0;
+}
+
+.stack_group_right {
+	float: right;
+	margin-right: 0;
+	margin-left: 10px;
+}
+
+.stack_group_last {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+
+
+
+/* button link & button */
+a.button_link, .button {
+	line-height: inherit;
+	padding: 0 8px;
+	margin: 5px;
+    border-radius: 2px;
+	background-color: #e5e5e5;
+    border: 1px solid #ccc;
+    text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+
+	display: inline-block;
+}
+a.button_link, .button {
+	*display: inline;
+}
+
+a.button_link:hover, .button:hover {
+	background-color:#ebebeb;
+	text-decoration:none
+}
+
+a.button_link_disabled, .button_disabled, a.button_link_disabled:hover, .button_disabled:hover {
+	background-color: #e5e5e5 !important;
+    border: 1px solid #ccc !important;
+	color: #fff !important;
+	cursor: not-allowed !important;
+}
+
+
+
+
+/* selectable */
+.selectable {
+	border: 1px solid #e4e4e4;
+	cursor: pointer;
+}
+
+.selectable:hover {
+	border-color: #aaa;
+}
+
+.selectable_selected, .selectable_selected:hover {
+	border-color: #197ae5;
+}
+
+.selectable_disabled, .selectable_disabled:hover {
+	border-color: #e4e4e4;
+}
+
+ul.selectable_list {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: middle;
+	display: inline-block;
+}
+ul.selectable_list {
+	*display: inline;
+}
+
+ul.selectable_list li.selectable {
+	list-style: none;
+	margin: 5px 20px 5px 0;
+	padding: 3px 10px;
+	float: left;
+}

@@ -1,8 +1,6 @@
 ﻿{% extends "lx_base.html" %}
 
 {%block main%}
-{#21#}
-{#213#}
 <!--动态加载模块开始-->
 <div name="ymgj_banner" class="container container_24 tplArea ymgj_banner">
     <div class=" banner_b">
@@ -37,7 +35,7 @@
                         });
                     });
                 }
-                ensureMedia({"_css": {}, "_js": ["http://www.5migrate.com/static/admin/js/jquery.js", "http://www.5migrate.com/static/_Client/JQuery/cycle2/jquery.cycle2.min.js"]}, init);
+                ensureMedia({"_css": {}, "_js": ["{{ static }}/5migrate/jquery.js", "{{ static }}/5migrate/jquery.cycle2.min.js"]}, init);
             });
             </script>
         </div>
@@ -229,29 +227,29 @@
 
                 </div>
             </div>
-{#            <script type="text/javascript">#}
-{#            $(function() {#}
-{#                function init(){#}
-{#                    var box = $(".imageDisplay_43");#}
-{#                    box.each(function(){#}
-{#                        if(this.initCycle)#}
-{#                            return;#}
-{#                        this.initCycle = true;#}
-{##}
-{#                        var box = $(this);#}
-{#                        var wrap = box.closest('.ImageDisplayBoxWrap');#}
-{##}
-{##}
-{#                        box.cycle({#}
-{##}
-{##}
-{#                            slides: "> a"#}
-{#                        });#}
-{#                    });#}
-{#                }#}
-{#                ensureMedia({"_css": {}, "_js": ["http://www.5migrate.com/static/admin/js/jquery.js", "http://www.5migrate.com/static/_Client/JQuery/cycle2/jquery.cycle2.min.js"]}, init);#}
-{#            });#}
-{#            </script>#}
+            <script type="text/javascript">
+            $(function() {
+                function init(){
+                    var box = $(".imageDisplay_43");
+                    box.each(function(){
+                        if(this.initCycle)
+                            return;
+                        this.initCycle = true;
+
+                        var box = $(this);
+                        var wrap = box.closest('.ImageDisplayBoxWrap');
+
+
+                        box.cycle({
+
+
+                            slides: "> a"
+                        });
+                    });
+                }
+                ensureMedia({"_css": {}, "_js": ["{{ static }}/5migrate/jquery.js", "{{ static }}/5migrate/jquery.cycle2.min.js"]}, init);
+            });
+            </script>
         </div>
     </div>
 

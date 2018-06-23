@@ -1,0 +1,58 @@
+.yx ul.summaryList_ArticleModule li{
+    width:210px;
+    height:385px;
+    float:left;
+    margin:10px;
+    overflow:hidden;
+    font-size:12px;
+    border: 1px solid rgba(165, 184, 240, 0.3);
+    border:1px solid #a5b8f04d;
+    
+}
+
+.yx ul.summaryList_ArticleModule li .summary,.yx ul.summaryList_ArticleModule li a{
+    padding:0 10px;
+}
+
+.yx .pagination{
+    clear:both;
+}
+
+.yx .searchForm{
+    margin-top: 0px;
+}
+
+.yx .content_searchBar .searchFormBox{
+    display: block;
+}
+
+.yx .imgBox img{
+    margin: 0;
+}
+
+.yx .standardWidget .wHeader .caption{
+    display:none;
+}
+
+.yx .standardWidget .wHeader .more{
+    float:none;
+    text-align: center;
+    font-size: 17px;    
+}
+
+.yx ul.articleCategoryList li.listItem{
+    /* width: 22%; */
+    /* padding-top: 150px; */
+    /* background-repeat: no-repeat; */
+    /* background-position: center top; */
+    /* background-size: 100%; */
+    /* margin: 10px; */
+}
+
+.yx .standardWidget .wBody{
+    display:none;
+}
+
+.yx li.listItem .widget{
+    margin:0;
+}

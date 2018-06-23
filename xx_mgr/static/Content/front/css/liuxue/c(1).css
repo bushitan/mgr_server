@@ -1,0 +1,24 @@
+.widgetSet ul.setHeader li{
+    padding: 0;
+}
+
+.gsgk ul.setHeader li{
+    margin: 5px 0px 0px 10px;
+    padding: 0 12px;
+}
+
+.standardWidget .wHeader .caption{
+    padding: 19px 8px 10px 50px;
+}
+
+.standardWidget .wHeader .more{
+    padding: 23px 20px 10px 50px;
+}
+
+.lxzx ul.dateList li, .lxzx ul.bothSideList li{
+    line-height: 21px;
+}
+
+ul.list li, ul.dateList li {
+    padding: 3px 0;
+}

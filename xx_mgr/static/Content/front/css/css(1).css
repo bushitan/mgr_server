@@ -1,0 +1,22 @@
+/* list */
+.navigationList_horizontal li{
+	display:inline-block;
+}
+.navigationList_horizontal li{
+	*display:inline;
+}
+
+.navigationList li.current {
+	font-weight:bold;
+}
+
+/* menu */
+ul.navigationMenu {
+	margin:0;
+	border:0;
+	padding:0;
+}
+
+ul.navigationMenu li.current {
+	font-weight:bold;
+}

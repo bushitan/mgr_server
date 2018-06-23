@@ -10,7 +10,7 @@
 .neiye .standardWidget .wHeader {
     overflow: auto;
     zoom: 1;
-    background: url(http://img.12xiong.top/xx_mgr/ym_bg.png) no-repeat 0px -1152px;
+    background: url({{ static }}/img/ym_bg.png) no-repeat 0px -1152px;
     height: 45px;
     width: 470px;
     border-bottom: 1px solid #ccc;}
@@ -54,37 +54,37 @@
 	</div>
 </div>
 <script type="text/javascript">
-$(function() {
-	function init(){
-		var box = $(".imageDisplay_100");
-		box.each(function(){
-			if(this.initCycle)
-				return;
-			this.initCycle = true;
-
-			var box = $(this);
-			var wrap = box.closest('.ImageDisplayBoxWrap');
-
-
-			box.cycle({
-
-				before: function(curr, next, opts) {
-					var img = $(next).children('img');
-
-					var src = img.data("data-original");
-					if(src) {
-						img.attr("src", src);
-						img.removeData("data-original");
-					}
-				},
-				timeout: 5000,
-				pause: 1,
-				fx: "fade"
-			});
-		});
-	}
-	ensureMedia({"_css": {}, "_js": ["/static/admin/js/jquery.js", "/static/_Client/JQuery/cycle/jquery.cycle.all.js"]}, init);
-});
+{#$(function() {#}
+{#	function init(){#}
+{#		var box = $(".imageDisplay_100");#}
+{#		box.each(function(){#}
+{#			if(this.initCycle)#}
+{#				return;#}
+{#			this.initCycle = true;#}
+{##}
+{#			var box = $(this);#}
+{#			var wrap = box.closest('.ImageDisplayBoxWrap');#}
+{##}
+{##}
+{#			box.cycle({#}
+{##}
+{#				before: function(curr, next, opts) {#}
+{#					var img = $(next).children('img');#}
+{##}
+{#					var src = img.data("data-original");#}
+{#					if(src) {#}
+{#						img.attr("src", src);#}
+{#						img.removeData("data-original");#}
+{#					}#}
+{#				},#}
+{#				timeout: 5000,#}
+{#				pause: 1,#}
+{#				fx: "fade"#}
+{#			});#}
+{#		});#}
+{#	}#}
+{#	ensureMedia({"_css": {}, "_js": ["/static/admin/js/jquery.js", "/static/_Client/JQuery/cycle/jquery.cycle.all.js"]}, init);#}
+{#});#}
 </script></div></div></div><div class="grid grid_7"><div class="customContent">
     <img src="{{ two_article.cover.url }}" alt="" width="260" height="100"></div>
 </div><div class="separator clear"></div>

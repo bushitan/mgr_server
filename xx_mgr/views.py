@@ -13,8 +13,19 @@ action_page = ActionPage()
 
 
 
+
+
+
+class BaseMixin(object):
+	def get_context_data(self, *args, **kwargs):
+		kwargs['static'] = "/live/static"
+		# kwargs['nav_list'] = action_page.GetNav(self)
+		context = super(BaseMixin, self).get_context_data(**kwargs)
+		return context
+
+
 # 移民国家子项
-class Main(ListView):
+class Main(BaseMixin,ListView):
 	template_name = 'main.html'
 	# context_object_name = 'article_list'
 	def get_context_data(self, **kwargs):
@@ -23,19 +34,6 @@ class Main(ListView):
 	def get_queryset(self):
 		pass
 
-
-
-
-
-
-
-
-
-class BaseMixin(object):
-	def get_context_data(self, *args, **kwargs):
-		# kwargs['nav_list'] = action_page.GetNav(self)
-		context = super(BaseMixin, self).get_context_data(**kwargs)
-		return context
 
 class YMBase(BaseMixin):
 	def get_context_data(self, *args, **kwargs):

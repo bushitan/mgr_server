@@ -14,37 +14,37 @@
                 </div>
 </div>
 <script type="text/javascript">
-$(function() {
-	function init(){
-		var box = $(".imageDisplay_172");
-		box.each(function(){
-			if(this.initCycle)
-				return;
-			this.initCycle = true;
+{#$(function() {#}
+{#	function init(){#}
+{#		var box = $(".imageDisplay_172");#}
+{#		box.each(function(){#}
+{#			if(this.initCycle)#}
+{#				return;#}
+{#			this.initCycle = true;#}
+{##}
+{#			var box = $(this);#}
+{#			var wrap = box.closest('.ImageDisplayBoxWrap');#}
+{##}
+{##}
+{#			box.cycle({#}
+{##}
+{#				before: function(curr, next, opts) {#}
+{#					var img = $(next).children('img');#}
+{##}
+{#					var src = img.data("data-original");#}
+{#					if(src) {#}
+{#						img.attr("src", src);#}
+{#						img.removeData("data-original");#}
+{#					}#}
+{#				},#}
+{#				timeout: 5000,#}
+{#				pause: 1,#}
+{#				fx: "fade"#}
+{#			});#}
+{#		});#}
+{#	}#}
+{#	ensureMedia({"_css": {}, "_js": ["/static/admin/js/jquery.js", "/static/_Client/JQuery/cycle/jquery.cycle.all.js"]}, init);#}
 
-			var box = $(this);
-			var wrap = box.closest('.ImageDisplayBoxWrap');
-
-
-			box.cycle({
-
-				before: function(curr, next, opts) {
-					var img = $(next).children('img');
-
-					var src = img.data("data-original");
-					if(src) {
-						img.attr("src", src);
-						img.removeData("data-original");
-					}
-				},
-				timeout: 5000,
-				pause: 1,
-				fx: "fade"
-			});
-		});
-	}
-	ensureMedia({"_css": {}, "_js": ["/static/admin/js/jquery.js", "/static/_Client/JQuery/cycle/jquery.cycle.all.js"]}, init);
-});
 </script></div></div></div><div class="grid grid_7"><div class="customContent">
 {#    2 logo#}
     <img src="{{ two_article.cover.url }}" alt="" width="260" height="100">
@@ -55,41 +55,41 @@ $(function() {
 </div><div class="xx_map">
     <div class="ImageDisplayBoxWrap ImageDisplayBoxWrap_ArticleModule ">
 	<div class="ImageDisplayBox imageDisplay_327" style="height:550px; position: relative;">
-        <p><iframe class="ueditor_baidumap" src="http://www.lwdweb.top:27230/Content/admin/js/ueditor/dialogs/map/show.html#center={{ three_article.title }},{{ three_article.subtitle }}&amp;zoom=18&amp;width=310&amp;height=565&amp;markers={{ three_article.title }},{{ three_article.subtitle }}&amp;markerStyles=l,A" frameborder="0" width="310" height="565"></iframe></p>
+        <p><iframe class="ueditor_baidumap" src="{{ static }}/Content/admin/js/ueditor/dialogs/map/show.html#center={{ three_article.title }},{{ three_article.subtitle }}&amp;zoom=18&amp;width=310&amp;height=565&amp;markers={{ three_article.title }},{{ three_article.subtitle }}&amp;markerStyles=l,A" frameborder="0" width="310" height="565"></iframe></p>
 	</div>
 </div>
 <script type="text/javascript">
-$(function() {
-	function init(){
-		var box = $(".imageDisplay_327");
-		box.each(function(){
-			if(this.initCycle)
-				return;
-			this.initCycle = true;
+{#$(function() {#}
+{#	function init(){#}
+{#		var box = $(".imageDisplay_327");#}
+{#		box.each(function(){#}
+{#			if(this.initCycle)#}
+{#				return;#}
+{#			this.initCycle = true;#}
+{##}
+{#			var box = $(this);#}
+{#			var wrap = box.closest('.ImageDisplayBoxWrap');#}
+{##}
+{##}
+{#			box.cycle({#}
+{##}
+{#				before: function(curr, next, opts) {#}
+{#					var img = $(next).children('img');#}
+{##}
+{#					var src = img.data("data-original");#}
+{#					if(src) {#}
+{#						img.attr("src", src);#}
+{#						img.removeData("data-original");#}
+{#					}#}
+{#				},#}
+{#				timeout: 5000,#}
+{#				pause: 1,#}
+{#				fx: "fade"#}
+{#			});#}
+{#		});#}
+{#	}#}
+{#	ensureMedia({"_css": {}, "_js": ["/static/admin/js/jquery.js", "/static/_Client/JQuery/cycle/jquery.cycle.all.js"]}, init);#}
 
-			var box = $(this);
-			var wrap = box.closest('.ImageDisplayBoxWrap');
-
-
-			box.cycle({
-
-				before: function(curr, next, opts) {
-					var img = $(next).children('img');
-
-					var src = img.data("data-original");
-					if(src) {
-						img.attr("src", src);
-						img.removeData("data-original");
-					}
-				},
-				timeout: 5000,
-				pause: 1,
-				fx: "fade"
-			});
-		});
-	}
-	ensureMedia({"_css": {}, "_js": ["/static/admin/js/jquery.js", "/static/_Client/JQuery/cycle/jquery.cycle.all.js"]}, init);
-});
 </script></div></div></div>
 
     <style>

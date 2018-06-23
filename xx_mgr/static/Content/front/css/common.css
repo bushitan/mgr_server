@@ -1,0 +1,42 @@
+/* 外观 */
+.shadow, .shadow2{box-shadow: 3px 3px 4px #999;
+-moz-box-shadow: 3px 3px 4px #999;
+-webkit-box-shadow: 3px 3px 4px #999;
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#999999');
+-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#999999')";}
+
+/* 解决ie6、7使用filter滤镜溢出内容被强制隐藏的Bug，一般用于允许拖拽的区域 */
+.shadow2{
+_filter: none;
+_-ms-filter:none;
+_background:transparent url(../Images/shadow.png) no-repeat scroll right bottom;
+_padding:0 6px 6px 0;
+#filter: none;
+#-ms-filter:none;
+#background:transparent url(../Images/shadow.png) no-repeat scroll right bottom;
+#padding:0 6px 6px 0;}
+
+.loading{
+	display:block;
+	width:50px;
+	height:50px;
+	background:transparent url(../Images/loading/loading.gif) no-repeat scroll right bottom;
+}
+
+.no-close {
+	z-index:10000;
+}
+
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
+.no-close .loadingBox {
+	margin:10px 0;
+}
+.no-close .loading {
+	display:inline-block;
+	vertical-align:middle;
+}
+.no-close .loading {
+	*display:inline;
+}
