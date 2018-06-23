@@ -19,7 +19,7 @@ from django.contrib.auth.models import User as  AdminUser
 
 #企业信息
 class App(models.Model):
-    sys_user = models.OneToOneField(AdminUser,related_name=u"system_user",verbose_name=u'系统管理员',null=True,blank=True)
+    # sys_user = models.OneToOneField(AdminUser,related_name=u"system_user",verbose_name=u'系统管理员',null=True,blank=True)
     name = models.CharField(max_length=100, verbose_name=u'名称',null=True,blank=True)
     app_id =  models.CharField(max_length=100, verbose_name=u'AppID',null=True,blank=True)
     secret_key = models.CharField(max_length=100, verbose_name=u'SecretKey',null=True,blank=True)
