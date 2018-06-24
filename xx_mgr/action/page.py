@@ -104,7 +104,7 @@ class ActionPage():
 		else:
 			return False
 
-	def GetAboutMe(self,article_id):
+	def GetAboutMe(self):
 		_article_list = [
 			self.query_article.GetQuery(id = 73),
 			self.query_article.GetQuery(id = 74),

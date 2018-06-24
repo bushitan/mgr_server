@@ -127,6 +127,8 @@ class YMAboutMeView(YMBase, ListView):
 	# context_object_name = 'article_list'
 	def get_context_data(self, **kwargs):
 		kwargs['nav_index'] = int(self.nav_index)
+
+		kwargs['article_list'] = action_page.GetAboutMe()
 		# kwargs['article'] = action_page.GetArticleByID(self.article_id)
 		# print kwargs['article']
 		return super(YMAboutMeView, self).get_context_data(**kwargs)
@@ -287,6 +289,7 @@ class LXAboutMeView(YMBase, ListView):
 	# context_object_name = 'article_list'
 	def get_context_data(self, **kwargs):
 		kwargs['nav_index'] = int(self.nav_index)
+		kwargs['article_list'] = action_page.GetAboutMe()
 		# kwargs['article'] = action_page.GetArticleByID(self.article_id)
 		# print kwargs['article']
 		return super(LXAboutMeView, self).get_context_data(**kwargs)
@@ -524,7 +527,7 @@ class MobileAboutMeView(MobileBase, ListView):
 	def get_context_data(self, **kwargs):
 		kwargs['web_site'] = int(self.web_site)
 		# kwargs['tag'] ,kwargs['article_list'] = action_page.GetArticleListByTagID(self.tag_id)
-		kwargs['article_list'] = action_page.GetAboutMe(self.tag_id)
+		kwargs['article_list'] = action_page.GetAboutMe()
 		# print kwargs['article']
 		return super(MobileAboutMeView, self).get_context_data(**kwargs)
 	def get_queryset(self):
