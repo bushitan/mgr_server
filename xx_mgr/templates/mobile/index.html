@@ -4,15 +4,15 @@
 
 {%block main%}
 {#    <link href="/live/static/app.css" rel="stylesheet" media="all"/>#}
-    <link href="/live/static/index.css" rel="stylesheet" media="all"/>
-    <script src="http://www.lwdweb.top:27230/Content/front/js/jquery.js"></script>
-    <script src="http://www.lwdweb.top:27230/Content/front/js/LAB.min.js"></script>
-    <script src="http://www.lwdweb.top:27230/Content/front/js/ensureMedia.js"></script>
+{#    <link href="/live/static/index.css" rel="stylesheet" media="all"/>#}
+    <script src="{{ static }}/Content/front/js/jquery.js"></script>
+    <script src="{{ static }}/Content/front/js/LAB.min.js"></script>
+    <script src="{{ static }}/Content/front/js/ensureMedia.js"></script>
 
     <div class="mgr_header">
-        <img class="logo" src="/live/static/img/logo.png">
+        <img class="logo" src="{{ static }}/img/logo.png">
         <div class="phone">
-            <img  src="/live/static/img/phone.png">
+            <img  src="{{ static }}/img/phone.png">
         </div>
 
     </div>
@@ -50,7 +50,7 @@
                                 });
                             });
                         }
-                        ensureMedia({"_css": {}, "_js": ["http://www.5migrate.com/static/admin/js/jquery.js", "http://www.5migrate.com/static/_Client/JQuery/cycle2/jquery.cycle2.min.js"]}, init);
+                        ensureMedia({"_css": {}, "_js": ["{{ static }}/5migrate/jquery.js", "{{ static }}/5migrate/jquery.cycle2.min.js"]}, init);
                     })
                 )
             </script>
@@ -68,6 +68,29 @@
                     <div>{{ nav.name }}</div>
                 </a>
             {%  endfor %}
+
+            {% if web_site == 0 %}
+{#                留学#}
+                <a href="{{ cover_base_url }}/{{ web_site }}/46" class='node' >
+                    <img src='{{ nav.logo.url }}'/>
+                    <div>海外游学</div>
+                </a>
+                <a href="{{ cover_base_url }}/{{ web_site }}/45" class='node' >
+                    <img src='{{ nav.logo.url }}'/>
+                    <div>成功案例</div>
+                </a>
+                <a href="{{ about_me_url }}/{{ web_site }}/44" class='node' >
+                    <img src='{{ nav.logo.url }}'/>
+                    <div>关于我们</div>
+                </a>
+            {% else %}
+{#                移民#}
+
+                <a href="{{ about_me_url }}/{{ web_site }}/44" class='node' >
+                    <img src='{{ nav.logo.url }}'/>
+                    <div>关于我们</div>
+                </a>
+            {% endif %}
         </div>
     </div>
 {#http://img.12xiong.top/xx_mgr_16_2018_05_31_14_36_24.jpg#}

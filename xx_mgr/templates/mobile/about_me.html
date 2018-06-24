@@ -1,0 +1,118 @@
+
+{% extends "mobile/base.html" %}
+
+{%block main%}
+
+    <style>
+
+.xx_about{
+    /*width: 160px;*/
+    /*height: 100px;*/
+    /*background: #8734f7;*/
+    /*-webkit-transform: skew(30deg);*/
+    /*-moz-transform: skew(30deg);*/
+    /*-o-transform: skew(30deg);*/
+    /*transform: skew(30deg);*/
+    display: flex;
+    justify-content: space-around;
+    font-size: 9pt;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.location{
+    position: relative;
+    top: 0px;
+    left: 0px;
+{#    margin: 0 8px;#}
+    padding: 0 12px;
+}
+.xx_about .tab ,.xx_about .tab_select{
+{#     width: 30px;#}
+{#     height: 20px;#}
+{#     line-height: 40px;#}
+     text-align: center;
+     color: white;
+     z-index: 999;
+}
+.xx_about .tab:after  , .xx_about .tab_select:after{
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    transform: skewX(-30deg);
+    z-index: -1;
+}
+.xx_about .tab:after{
+    background-color: #00134D;
+}
+.xx_about .tab_select:after{
+    background-color: #CB2546;
+}
+
+.xx_about_node{
+    padding: 0 15px;
+}
+.xx_about_node img{
+    width: 100%;
+    height: auto;
+}
+    
+    
+    </style>
+ <script>
+        $(function(){
+              $(".tablea").find(".box:first").show();    //为每个BOX的第一个元素显示
+              $("#oranger .location").click(function(){ //给a标签添加事件
+                  var index=$(this).index();  //获取当前a标签的个数
+                  console.log(index)
+{#                 $(this).parent().next().find(".box").hide().eq(index).show(); //返回上一层，在下面查找css名为box隐藏，然后选中的显示#}
+                  $(this).parent().next().find(".box").hide().eq(index).show();
+                  $(this).addClass("tab_select").siblings().removeClass("tab_select"); //a标签显示，同辈元素隐藏
+              })
+        })
+    </script>
+
+
+
+    <div class="mgr_back">  <a href="javascript:history.go(-1)">返回</a></div>
+{#    <link href="{{ static }}/Content/front/css/xx.css" rel="stylesheet" media="all"/>#}
+{# <div style="height: 30px;"></div>#}
+    <div class="xx_box">
+        <div class="xx_about" id="oranger">
+                <div class="location xx_about_tab tab tab_select">
+                    <div>公司</div>
+                    <div>简介</div>
+                </div>
+                <div class="location xx_about_tab tab ">
+                    <div>公司</div>
+                    <div>荣誉</div>
+                </div>
+                <div class="location xx_about_tab tab ">
+                    <div>企业</div>
+                    <div>文化</div>
+                </div>
+                <div class="location xx_about_tab tab ">
+                    <div>联系</div>
+                    <div>方式</div>
+                </div>
+                <div class="location xx_about_tab tab ">
+                    <div>招贤</div>
+                    <div>纳士</div>
+                </div>
+                <div class="location xx_about_tab tab ">
+                    <div>明星</div>
+                    <div>团队</div>
+                </div>
+        </div>
+{#        <div style="height: 2em;"></div>#}
+        <div class="tablea">
+            {% for article in article_list %}
+                <div class="xx_about_node box" style="display: block;">
+                    {% autoescape off %}
+                        {{ article.content }}
+                    {% endautoescape %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

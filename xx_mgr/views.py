@@ -430,6 +430,8 @@ class MobileBase(BaseMixin):
 		kwargs['tab_base_url'] = "/live/xx_mgr/mobile/tab"
 		kwargs['cover_base_url'] = "/live/xx_mgr/mobile/cover"
 		kwargs['article_base_url'] = "/live/xx_mgr/mobile/article"
+		kwargs['success_url'] = "/live/xx_mgr/mobile/success"
+		kwargs['about_me_url'] = "/live/xx_mgr/mobile/about_me"
 		# print  11111, kwargs['nav_list']
 		context = super(MobileBase, self).get_context_data(**kwargs)
 		return context
@@ -513,6 +515,24 @@ class MobileArticleView(MobileBase, ListView):
 		self.web_site = self.kwargs.get('web_site')
 		self.article_id = self.kwargs.get('article_id')
 		return super(MobileArticleView, self).get(request, *args, **kwargs)
+
+
+######## 关于我们
+class MobileAboutMeView(MobileBase, ListView):
+	template_name = 'mobile/about_me.html'
+	# context_object_name = 'article_list'
+	def get_context_data(self, **kwargs):
+		kwargs['web_site'] = int(self.web_site)
+		# kwargs['tag'] ,kwargs['article_list'] = action_page.GetArticleListByTagID(self.tag_id)
+		kwargs['article_list'] = action_page.GetAboutMe(self.tag_id)
+		# print kwargs['article']
+		return super(MobileAboutMeView, self).get_context_data(**kwargs)
+	def get_queryset(self):
+		pass
+	def get(self, request, *args, **kwargs):
+		self.web_site = self.kwargs.get('web_site')
+		self.tag_id = self.kwargs.get('tag_id')
+		return super(MobileAboutMeView, self).get(request, *args, **kwargs)
 
 
 

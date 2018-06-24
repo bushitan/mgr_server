@@ -18,12 +18,12 @@ class ActionPage():
 
 	def MobileGetNav(self,web_site):
 		_nav_list = self.query_tag.Filter(web_site = web_site,father = None,show_mobile=YES)
-		if int(web_site) == 0 :
-			_nav_list.append( self.query_tag.Get(id = 46))#海外游学
-			_nav_list.append( self.query_tag.Get(id = 45)) #成功案例
-
-		_about_me = self.query_tag.Get(id = 44) #关于我们
-		_nav_list.append(_about_me)
+		# if int(web_site) == 0 :
+		# 	_nav_list.append( self.query_tag.Get(id = 46))#海外游学
+		# 	_nav_list.append( self.query_tag.Get(id = 45)) #成功案例
+        #
+		# _about_me = self.query_tag.Get(id = 44) #关于我们
+		# _nav_list.append(_about_me)
 		return _nav_list
 
 	def GetYMIndex(self):
@@ -103,6 +103,19 @@ class ActionPage():
 			return self.query_article.GetQuery(id = article_id)
 		else:
 			return False
+
+	def GetAboutMe(self,article_id):
+		_article_list = [
+			self.query_article.GetQuery(id = 73),
+			self.query_article.GetQuery(id = 74),
+			self.query_article.GetQuery(id = 75),
+			# self.query_article.GetQuery(id = 73),
+		]
+		return _article_list
+		# if self.query_article.IsExists() is True:
+		# 	return self.query_article.GetQuery(id = article_id)
+		# else:
+		# 	return False
 
 
 

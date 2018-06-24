@@ -40,6 +40,7 @@ urlpatterns = [
     url(r'^mobile/tab/(?P<web_site>\w+)/(?P<father_id>\w+)/$', MobileTabView.as_view()),
     url(r'^mobile/cover/(?P<web_site>\w+)/(?P<tag_id>\w+)/$', MobileCoverView.as_view()),
     url(r'^mobile/article/(?P<web_site>\w+)/(?P<article_id>\w+)/$', MobileArticleView.as_view()),
+    url(r'^mobile/about_me/(?P<web_site>\w+)/(?P<tag_id>\w+)/$', MobileAboutMeView.as_view()),
     # url(r'^mobile/article/$', MobileArticleView.as_view()),
 
     # url(r'^media/(?P<path>.*)$', serve,{'document_root': MEDIA_ROOT, }),
