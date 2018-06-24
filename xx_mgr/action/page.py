@@ -109,7 +109,9 @@ class ActionPage():
 			self.query_article.GetQuery(id = 73),
 			self.query_article.GetQuery(id = 74),
 			self.query_article.GetQuery(id = 75),
-			# self.query_article.GetQuery(id = 73),
+			self.query_article.GetQuery(id = 76),
+			self.query_article.GetQuery(id = 77),
+			self.query_article.GetQuery(id = 78),
 		]
 		return _article_list
 		# if self.query_article.IsExists() is True:
