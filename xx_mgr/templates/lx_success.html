@@ -20,6 +20,9 @@
         display:-webkit-box;
         -webkit-box-orient:vertical;
         -webkit-line-clamp:4;
+{#        #}
+{#        #}
+{#        white-space:nowrap; text-overflow:ellipsis; /* for internet explorer */ overflow:hidden;  display:block;#}
     }
     .xx_box{
         min-height: 400px;
@@ -39,11 +42,12 @@
                         <div style="height:10px;"></div>
                         <div class="summary">
                             {% autoescape off %}
-                                {{ article.content }}
+                                {{ article.subtitle  }}
                             {% endautoescape %}
                         </div>
                     </div>
                 </div>
+            <div style="height:25px;"></div>
             {% endfor %}
         </div>
         <div style="height:15px;"></div>
