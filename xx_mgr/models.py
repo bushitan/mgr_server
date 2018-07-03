@@ -148,7 +148,7 @@ def QNUploadImage(self):
 	_name = "xx_mgr_" + str(self.id) + "_" + _now.strftime("%Y_%m_%d_%H_%M_%S") # 拼接名字
 	_style = _local_path.split(".")[-1] # 拼接类别
 	_file_name = _name + "." + _style # 拼接图片名字
-	self.url =  "http://img.12xiong.top/" + _file_name #存储的链接
+	self.url =  QINIU_HOST + _file_name #存储的链接
 	self.name = _file_name
 	# #上传七牛
 	_qiniu = QiNiu()

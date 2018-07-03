@@ -7,11 +7,11 @@ MACH_ID = "1488713872"
 MACH_KEY = "283fc3d9d4b8ba3b58601145466d4417"
 
 # 七牛配置
-QINIU_ACCESS_KEY = 'bK5xWj0a-TBIljlxHYOHuQib9HYF_9Ft-HtP8tEb'
-QINIU_SECRET_KEY = '56lucORYc45sF5eDqNk63mLXsQ78n4RrubIrjtE0'
-QINIU_BUCKET_NAME = 'clickz' #空间名称
+QINIU_ACCESS_KEY = 'Thpn8CRHLnJDdzBACj-5ZRsAqzmQ4MuOIFGvNlAv'
+QINIU_SECRET_KEY = 'hVLrjIw4iMh8_oB9zJfypVXjH6Nf2z84UG5vx0ct'
+QINIU_BUCKET_NAME = 'migrate' #空间名称
 QINIU_IMG_NAME = "live"  #路径前缀
-QINIU_HOST = 'http://image.12xiong.top/'
+QINIU_HOST = 'http://image.5migrate.com/'
 QINIU_CALLBACK_URL = "https://www.12xiong.top/day365/lite/upload/callback/"
 QINIU_CALLBACK_BODY = "key=$(key)&hash=$(etag)&w=$(imageInfo.width)&h=$(imageInfo.height)&duration=$(avinfo.video.duration)&fsize=$(fsize)&vw=$(avinfo.video.width)&vh=$(avinfo.video.height)"
 QINIU_CALLBACK_HOST = "120.27.97.33"
