@@ -33,7 +33,7 @@
         <div style="height:15px;"></div>
         <div class="xx_cover">
             {% for article in article_list %}
-                <div class="xx_flex_left ">
+                <a class="xx_flex_left " href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/">
                     <div>
                         <img src="{{ article.cover.url }}" alt=""/>
                     </div>
@@ -46,7 +46,7 @@
                             {% endautoescape %}
                         </div>
                     </div>
-                </div>
+                </a>
             <div style="height:25px;"></div>
             {% endfor %}
         </div>

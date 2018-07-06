@@ -122,37 +122,43 @@
                     {% endfor %}
                 </ul>
                 <div class="setBody">
-
                      {% for article in four_article_list %}
-                     <div class="widget widget_564_214 standardWidget ui-sortable-handle gsgn current">
-                        <div class="wHeader">
-{#                                            <h2 class="caption">焦点新闻</h2>#}
-                            <a class="more" href="菜单地址">更多...</a>
-                        </div>
-                        <div class="wBody">
-                            <ul class="summaryList summaryList_ArticleModule">
-                                <li>
-                                    <div class="imgBox">
-                                        <a href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank">
+                         <div class="widget widget_564_214 standardWidget ui-sortable-handle gsgn current">
+                            <div class="wHeader">
+    {#                                            <h2 class="caption">焦点新闻</h2>#}
+                                <a class="more" href="菜单地址">更多...</a>
+                            </div>
+                             {% if article.id == null %}
+                                   <div class="wBody">
+                                    <ul class="summaryList summaryList_ArticleModule">
+                                    </ul>
+                                </div>
+                             {% else %}
+                                <div class="wBody">
+                                    <ul class="summaryList summaryList_ArticleModule">
+                                        <li>
+                                            <div class="imgBox">
+                                                <a href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank">
 
-                                            <img src="{{ article.cover.url }}" data-original="{{ article.cover.url }}" style="width: 250px; height: 250px; display: inline;">
-                                        </a>
-                                    </div>
-                                    <a class="title" href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank">{{ article.title }}</a>
-                                    <div class="summary">
-                                       {{ article.subtitle }}
-                                        <span class="more">
-                                            <a href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank">[详细]</a>
-                                        </span>
-{#                                        <span class="more">#}
-{#                                            <a href="/Front/YimingMenuDetail?menuID=c61794e904b04ef99a9b0172ba3c34dd&amp;modelID=cd4462275d434d82b1590b0f4d141d9e&amp;rootMenuID=" target="_blank">[更多]</a>#}
-{#                                        </span>#}
-                                    </div>
-                                </li>
-
-                            </ul>
+                                                    <img src="{{ article.cover.url }}" data-original="{{ article.cover.url }}" style="width: 250px; height: 250px; display: inline;">
+                                                </a>
+                                            </div>
+                                            <a class="title" href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank">{{ article.title }}</a>
+                                            <div class="summary">
+                                               {{ article.subtitle }}
+                                                <span class="more">
+                                                    <a href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank">[详细]</a>
+                                                </span>
+        {#                                        <span class="more">#}
+        {#                                            <a href="/Front/YimingMenuDetail?menuID=c61794e904b04ef99a9b0172ba3c34dd&amp;modelID=cd4462275d434d82b1590b0f4d141d9e&amp;rootMenuID=" target="_blank">[更多]</a>#}
+        {#                                        </span>#}
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            {% endif %}
                         </div>
-                    </div>
+
                     {% endfor %}
                 </div>
             </div>
