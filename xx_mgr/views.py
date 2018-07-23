@@ -18,7 +18,7 @@ action_page = ActionPage()
 
 class BaseMixin(object):
 	def get_context_data(self, *args, **kwargs):
-		kwargs['nav_list'] = action_page.GetNav(1)
+		# kwargs['nav_list'] = action_page.GetNav(1)
 		print action_page.GetKeyWord()
 		kwargs['key_word'] = action_page.GetKeyWord()
 
@@ -450,7 +450,7 @@ class MobileIndex(MobileBase, ListView):
 
 	def get_context_data(self, **kwargs):
 		kwargs['nav_list'] = action_page.MobileGetNav(self.web_site)
-		print action_page.MobileGetNavByID(46)
+		# print kwargs['nav_list'][1]['name_mobile']
 		kwargs['nav_yx'] = action_page.MobileGetNavByID(46)
 		kwargs['nav_success'] = action_page.MobileGetNavByID(45)
 		kwargs['nav_about_me'] = action_page.MobileGetNavByID(44)
