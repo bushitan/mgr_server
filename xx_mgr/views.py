@@ -431,7 +431,7 @@ class LiteSwiper(LXBase, ListView):
 class MobileBase(BaseMixin):
 	def get_context_data(self, *args, **kwargs):
 
-		kwargs['nav_list'] = action_page.MobileGetNav(self.web_site)
+		# kwargs['nav_list'] = action_page.MobileGetNav(self.web_site)
 
 		kwargs['base_url'] = "/live/xx_mgr/mobile/index"
 		kwargs['tab_base_url'] = "/live/xx_mgr/mobile/tab"
@@ -449,6 +449,15 @@ class MobileIndex(MobileBase, ListView):
 	# context_object_name = 'article_list'
 
 	def get_context_data(self, **kwargs):
+		kwargs['nav_list'] = action_page.MobileGetNav(self.web_site)
+		print action_page.MobileGetNavByID(46)
+		kwargs['nav_yx'] = action_page.MobileGetNavByID(46)
+		kwargs['nav_success'] = action_page.MobileGetNavByID(45)
+		kwargs['nav_about_me'] = action_page.MobileGetNavByID(44)
+
+
+
+		#页面详情
 		kwargs['web_site'] = int(self.web_site)
 
 		if kwargs['web_site'] == 0:

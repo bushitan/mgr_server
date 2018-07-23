@@ -64,31 +64,32 @@
         <div class='rol'>
             {%  for nav in nav_list %}
                 <a href="{{ tab_base_url }}/{{ web_site }}/{{ nav.id }}" class='node' >
-                    <img src='http://m.visabridge.cn/templets/default/images/guoqi/01.png'/>
+{#                    <img src='http://m.visabridge.cn/templets/default/images/guoqi/01.png'/>#}
+                    <img src='{{ nav.logo.url }}'/>
                     <div>{{ nav.name }}</div>
                 </a>
             {%  endfor %}
 
             {% if web_site == 0 %}
 {#                留学#}
-                <a href="{{ cover_base_url }}/{{ web_site }}/46" class='node' >
-                    <img src='http://m.visabridge.cn/templets/default/images/guoqi/01.png'/>
-                    <div>海外游学</div>
+                <a href="{{ cover_base_url }}/{{ web_site }}/{{ nav_yx.id }}" class='node' >
+                    <img src='{{ nav_yx.logo.url }}'/>
+                    <div>{{ nav_yx.name }}</div>
                 </a>
-                <a href="{{ cover_base_url }}/{{ web_site }}/45" class='node' >
-                    <img src='http://m.visabridge.cn/templets/default/images/guoqi/01.png'/>
-                    <div>成功案例</div>
+                <a href="{{ cover_base_url }}/{{ web_site }}/{{ nav_success.id }}" class='node' >
+                    <img src='{{ nav_success.logo.url }}'/>
+                    <div>{{ nav_success.name }}</div>
                 </a>
-                <a href="{{ about_me_url }}/{{ web_site }}/44" class='node' >
-                    <img src='http://m.visabridge.cn/templets/default/images/guoqi/01.png'/>
-                    <div>关于我们</div>
+                <a href="{{ about_me_url }}/{{ web_site }}/{{ nav_about_me.id }}" class='node' >
+                    <img src='{{ nav_about_me.logo.url }}'/>
+                    <div>{{ nav_about_me.name }}</div>
                 </a>
             {% else %}
 {#                移民#}
 
-                <a href="{{ about_me_url }}/{{ web_site }}/44" class='node' >
-                    <img src='http://m.visabridge.cn/templets/default/images/guoqi/01.png'/>
-                    <div>关于我们</div>
+                <a href="{{ about_me_url }}/{{ web_site }}/{{ nav_about_me.id }}" class='node' >
+                    <img src='{{ nav_about_me.logo.url }}'/>
+                    <div>{{ nav_about_me.name }}</div>
                 </a>
             {% endif %}
         </div>

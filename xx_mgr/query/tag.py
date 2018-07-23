@@ -14,6 +14,7 @@ class QueryTag(QueryBase):
 			"web_site":obj.web_site,
 			"father_id":obj.father_id,
 			"pid":obj.pid,
+			"logo":obj.logo,
 			# "create_time":obj.create_time.strftime("%Y-%m-%d"),
 		}
 	# def Cover(self):

@@ -34,6 +34,12 @@ class ActionPage():
 		# _about_me = self.query_tag.Get(id = 44) #关于我们
 		# _nav_list.append(_about_me)
 		return _nav_list
+	def MobileGetNavByID(self,tag_id):
+		if self.query_tag.IsExists(id=tag_id) is True:
+			return self.query_tag.GetQuery(id=tag_id)
+		else:
+			return None
+
 
 	def GetYMIndex(self):
 		one_tag_list = self.query_tag.FilterQuery(father__pid = PID_YM_INDEX,pid = 1)
