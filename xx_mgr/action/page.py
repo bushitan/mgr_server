@@ -2,6 +2,7 @@
 
 from xx_mgr.query.tag import *
 from xx_mgr.query.article import *
+from xx_mgr.query.key_word import *
 
 PID_YM_INDEX = 11
 PID_YM_AMERICAN = 12
@@ -11,7 +12,15 @@ class ActionPage():
 	def __init__(self):
 		self.query_tag = QueryTag()
 		self.query_article = QueryArticle()
+		self.query_key_word = QueryKeyWord()
 
+	def GetKeyWord(self):
+		_list = self.query_key_word.FilterQuery()
+		_key_word = ""
+		# print _list
+		for k in _list:
+			_key_word = _key_word + k.key_word + ","
+		return _key_word
 
 	def GetNav(self,web_site):
 		return  self.query_tag.FilterQuery(web_site = web_site,father = None)

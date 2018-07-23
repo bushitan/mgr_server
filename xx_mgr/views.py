@@ -18,6 +18,10 @@ action_page = ActionPage()
 
 class BaseMixin(object):
 	def get_context_data(self, *args, **kwargs):
+		kwargs['nav_list'] = action_page.GetNav(1)
+		print action_page.GetKeyWord()
+		kwargs['key_word'] = action_page.GetKeyWord()
+
 		kwargs['static'] = "/live/static"
 		# kwargs['nav_list'] = action_page.GetNav(self)
 		context = super(BaseMixin, self).get_context_data(**kwargs)
