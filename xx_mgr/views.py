@@ -276,7 +276,8 @@ class LXSuccessView(LXBase, ListView):
 	def get_context_data(self, **kwargs):
 		kwargs['nav_index'] = 7
 
-		kwargs['tag'],kwargs['article_list']  = action_page.queryOnly(None,28,50)
+		# kwargs['tag'],kwargs['article_list']  = action_page.queryOnly(None,28,50)
+		kwargs['tag'],kwargs['article_list']  = action_page.queryOnly(11,4,50)
 
 		return super(LXSuccessView, self).get_context_data(**kwargs)
 
