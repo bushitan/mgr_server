@@ -1,6 +1,24 @@
 ﻿{% extends "lx_base.html" %}
 
 {%block main%}
+
+
+    <style>
+        .sl_list{
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+        }
+        .sl_title{
+             flex-grow:2;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            margin-right: 10px;
+        }
+
+    </style>
+
 <!--动态加载模块开始-->
 {#    ymgj_banner    style="width: 960px;!important"  #}
 <div name="ymgj_banner" class="container container_24 tplArea " >
@@ -100,7 +118,7 @@
     </div>
 
 
-{#    移民资讯#}
+{#    留学资讯#}
     <div class="grid grid_9">
     <div style="height:25px"></div>
         <div class="widget widget_47_30 standardWidget ui-sortable-handle lxzx">
@@ -112,9 +130,10 @@
             <div class="wBody">
                       <ul class="dateList dateList_ArticleModule">
                           {% for article in two_article_list %}
-                            <li>
-                                <a href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank" title="澳洲10年往返签正式实施啦！澳洲留学探亲好利器！">
-                                    {{ article.title|slice:"15" }}
+                            <li class="sl_list">
+                                <a href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank" class="sl_title">
+{#                                    {{ article.title|slice:"15" }}#}
+                                    {{ article.title}}
                                 </a>
                                 <span>{{ article.issue_time|date:"Y/m/d" }}</span>
                             </li>
@@ -180,8 +199,6 @@
 
 
 
-
-
     {#成功案例#}
     <div class="grid grid_9 cgal_a">
         <div class="widget widget_53_33 cgal standardWidget">
@@ -192,9 +209,9 @@
 
                 <ul class="list list_ArticleModule">
                         {% for article in four_article_list %}
-                            <li>
-                                <a href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank" title="日本研究生留学需要满足的一些硬性条件">
-                                    {{ article.title|slice:"10" }}
+                            <li class="sl_list">
+                                <a href="{{ article_base_url }}/{{ nav_index }}/{{ article.id }}/" target="_blank"  class="sl_title">
+                                    {{article.title}}
                                 </a>
                                 <span>{{ article.issue_time|date:"Y/m/d" }}</span>
                             </li>
