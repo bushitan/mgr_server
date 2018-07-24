@@ -160,7 +160,9 @@
 .mgr_footer .icon{
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-bottom: 5px;
+    /*text-align: center;*/
 }
 .mgr_footer .icon img{
     width: 23px;
